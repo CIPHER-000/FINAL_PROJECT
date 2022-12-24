@@ -65,8 +65,8 @@ def hobbies():
     if request.method == "POST":
         options = [request.form.get(f"option{i}") for i in range(1, 31)]
         query = "INSERT INTO hobbies (user_id, question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, question11, question12, question13, question14, question15, question16, question17, question18, question19, question20, question21, question22, question23, question24, question25, question26, question27, question28, question29, question30) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        values = (session["user_id"], (*options, ))
-        db.executemany(query, values)
+        values = (session["user_id"], *options)
+        db.execute(query, values)
         mydb.commit()
         print(options[0], "record inserted.")
         return redirect("/interests")
@@ -86,7 +86,7 @@ def interests():
         interests = request.form.getlist("interest")
         
         for interest in interests:
-            db.executemany("INSERT INTO interests (user_id, interests) VALUES (%s, %s)", (session["user_id"], interest, ))
+            db.execute("INSERT INTO interests (user_id, interest) VALUES (%s, %s)", (session["user_id"], interest, ))
         
         mydb.commit()
 
@@ -148,7 +148,7 @@ def profile():
             db.execute(sql, val)
             mydb.commit()
             print ('File uploaded successfully')
-            return redirect("/homepage")
+            return redirect("/match")
         else:
             print('/error')
     
