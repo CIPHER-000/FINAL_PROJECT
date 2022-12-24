@@ -1,0 +1,62 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.btn {
+    display: flex;
+    padding: 20px 50px;
+    font-size: 1.25rem;
+    position: relative;
+    margin: 32px;
+    transition: transform 0.3s ease;
+    background: #ff574a;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    width: 250px;
+    padding-left: 75px;
+}
+
+.text {
+    color: #fff;
+    text-decoration: none;
+}
+
+button {
+    animation: shake 0.7s infinite;
+}
+
+button:hover {
+    animation: shake 0.6s ease-in-out;
+    background: #802e28;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(1px, 1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, -1px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(2px, -1px) rotate(2deg);
+    }
+    100% {
+        transform: translate(-1px, 1px) rotate(-1deg);
+    }
+}

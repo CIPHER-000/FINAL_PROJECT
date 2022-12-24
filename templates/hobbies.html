@@ -1,0 +1,783 @@
+<!DOCTYPEhtml>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>C$50 FINAL PROJECT: {% block title %}{% endblock %}</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link href="/static/hobbies.css" rel="stylesheet">
+  </head>
+  <body>
+    <form action="/hobbies" method="post" enctype="multipart/form-data">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done! you successfully registered! </h4>
+        <p>You are one step closer to finding your new friends. Kindly answer these few personality questions to find a match best fit for you...</p>
+      </div>
+    
+    
+      <table>
+        <thead>
+          <tr>
+            <th class="a">my personalities</th>
+            <th class="b column">Totally Agree</th>
+            <th class="c column">Somewhat Agree</th>
+            <th class="d column">Neutral</th>
+            <th class="e column">Somewhat Disagree</th>
+            <th class="f column">Totally Disagree</th>
+          </tr>
+        </thead>
+        <tbody class="question">
+          <tr onclick="getIndex(this)">
+            <td class="ab questions">I make friends easily.</td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option1" value="Totally Agree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option1" value="Somewhat Agree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option1" value="Neutral">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option1" value="Somewhat Disagree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option1" value="Totally Disagree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+            </td>
+          </tr>
+          
+
+          <tr onclick="getIndex(this)">
+            <td class="ab questions">I would rather spend my free time socializing and going to parties.</td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option2" value="Totally Agree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option2" value="Somewhat Agree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option2" value="Neutral">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option2" value="Somewhat Disagree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+              <td class="question">
+                <input type="radio" id="input_3_0_0" class="form-radio" name="option2" value="Totally Disagree">
+                <label for="input_3_0_0" class="matrix"> </label>
+              </td>
+            </td>
+          </tr>
+
+          <tr onclick="getIndex(this)" class="question">
+            <td class="ab questions">When given an assignment, I would rather receive complete instructions before starting.</td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option3" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option3" value="Somewhat Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option3" value="Neutral">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option3" value="Somewhat Disagree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option3" value="Totally Disagree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr onclick="getIndex(this)">
+            <td class="ab questions">I am the first to say, “Hello” when I meet someone or see someone in my vicinity.</td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option4" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option4" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option4" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option4" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option4" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab questions"><p>I regularly make new friends.</p></td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option5" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option5" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option5" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option5" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option5" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I spend a lot of your free time exploring various random topics that pique your interest.</p></td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option6" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option6" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option6" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option6" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option6" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I usually stay calm, even under a lot of pressure.</p></td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option7" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option7" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td class="question">
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option7" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option7" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td class="question">
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option7" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>At social events, I rarely try to introduce myself to new people and mostly talk to the ones I already know.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option8" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option8" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option8" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option8" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option8" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>Even a small mistake can cause you to doubt my overall abilities and knowledge.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option9" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option9" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option9" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option9" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option9" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I feel comfortable just walking up to someone I find interesting and striking up a conversation.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option10" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option10" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option10" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option10" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option10" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I am not too interested in discussing various interpretations and analyses of creative works.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option11" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option11" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option11" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option11" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option11" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I usually prefer just doing what I feel like at any given moment instead of planning a particular daily routine.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option12" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option12" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option12" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option12" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option12" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I rarely worry about whether I make a good impression on people I meet.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option13" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option13" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option13" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option13" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option13" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>My happiness comes more from helping others accomplish things than my own accomplishments.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option14" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option14" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option14" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option14" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option14" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I am interested in so many things that I find it difficult to choose what to try next.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option15" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option15" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option15" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option15" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option15" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You are prone to worrying that things will take a turn for the worse.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option16" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option16" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option16" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option16" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option16" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You avoid leadership roles in group settings.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option17" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option17" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option17" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option17" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option17" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>I enjoy participating in group activities.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option18" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option18" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option18" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option18" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option18" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You prefer to do your chores before allowing yourself to relax.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option19" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option19" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option19" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option19" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option19" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You think the world would be a better place if people relied more on rationality and less on their feelings.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option20" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option20" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option20" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option20" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option20" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You are definitely not an artistic type of person.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option21" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option21" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option21" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option21" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option21" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You tend to avoid drawing attention to yourself.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option22" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option22" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option22" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option22" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option22" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You often spend a lot of time trying to understand views that are very different from your own.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option23" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option23" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option23" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option23" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option23" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You often have a hard time understanding other people’s feelings.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option24" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option24" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option24" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option24" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option24" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You usually prefer to be around others rather than on your own.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option25" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option25" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option25" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option25" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option25" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You usually contemplate the reasons for human existence or the meaning of life.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option26" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option26" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option26" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option26" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option26" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You would love a job that requires you to work alone most of the time.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option27" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option27" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option27" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option27" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option27" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You would pass along a good opportunity if you thought someone else needed it more.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option28" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option28" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option28" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option28" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option28" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You would pass along a good opportunity if you thought someone else needed it more.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option29" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option29" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option29" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option29" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option29" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ab question"><p>You feel confident that things will work out for you.</p></td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option30" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option30" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option30" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option30" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+            <td>
+              <input type="radio" id="input_3_0_0" class="form-radio" name="option30" value="Totally Agree">
+              <label for="input_3_0_0" class="matrix"> </label>
+            </td>
+          </tr>  
+        </tbody>
+      </table>
+      <div class="button">
+        <button class="btn">
+          Next
+        </button>
+      </div>
+    </form>
+
+  <p>Row Index: <span id="index"><span></p>
+
+    <script>
+      function getIndex(x) {
+        document.getElementById("index").textContent = x.rowIndex;
+      }
+    </script>
+
+    <script>
+      $('table tr').each(function(){
+        $(this).find('th').first().addClass('first');
+        $(this).find('th').last().addClass('last');
+        $(this).find('td').first().addClass('first');
+        $(this).find('td').last().addClass('last');
+      });
+      
+      $('table tr').first().addClass('row-first');
+      $('table tr').last().addClass('row-last');
+    </script>
+
+
+  </body>
+</html>
