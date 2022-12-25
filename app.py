@@ -122,9 +122,36 @@ def homepage():
         profile_path = profile_path[0]["images"] if profile_path else "default.jpg"
         
         
-        db.execute("SELECT username FROM users WHERE user_id IN (SELECT user_id FROM interests WHERE interest IN (SELECT interest FROM interests WHERE user_id = %s", session["user_id"])
-        usernames = db.fetchall()
-        return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, usernames=usernames)
+        
+        #Fetch the users hobbies
+        db.execute("SELECT * FROM hobbies WHERE user_id = %s", (session["user_id"], ))
+        user_hobby = db.fetchall()
+
+        names_list = []
+
+        # execute the SELECT statement and fetch the results
+        db.execute("SELECT users.username, hobbies.user_id FROM hobbies JOIN users ON users.id = hobbies.user_id WHERE user_id != %s", (session["user_id"], ))
+        hobbies = db.fetchall()
+
+        # iterate over each row in the hobbies list
+        for hobby in hobbies:
+            num_match = 0
+
+            # check for a match between the current row and the user_hobby dictionary
+            for i in range(1, 31):
+                if f"question{i}" in hobby and f"question{i}" in user_hobby:
+                    num_match += 1 if hobby[f"question{i}"] == user_hobby[f"question{i}"] else 0
+
+            # calculate the match percentage
+            match_percentage = (num_match/30) * 100
+
+            # if the match percentage is at least 40, append the names value to the names_list
+            if match_percentage >= 40:
+                names_list.append(hobby["username"])
+                
+            print(names_list)
+
+        return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, names_list=names_list)
         
         
 
