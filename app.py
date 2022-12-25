@@ -124,13 +124,13 @@ def homepage():
         
         
         #Fetch the users hobbies
-        db.execute("SELECT * FROM hobbies WHERE user_id = %s", (session["user_id"], ))
-        user_hobby = db.fetchall()
+        db.execute("SELECT *, interests.interest FROM hobbies JOIN interests ON hobbies.user_id = interests.user_id WHERE user_id = %s", (session["user_id"], ))
+        user_hobby = db.fetchall()[0]
 
         names_list = []
 
         # execute the SELECT statement and fetch the results
-        db.execute("SELECT users.username, hobbies.user_id FROM hobbies JOIN users ON users.id = hobbies.user_id WHERE user_id != %s", (session["user_id"], ))
+        db.execute("SELECT users.username, hobbies.* FROM hobbies JOIN users ON users.id = hobbies.user_id WHERE user_id != %s", (session["user_id"], ))
         hobbies = db.fetchall()
 
         # iterate over each row in the hobbies list
@@ -139,17 +139,21 @@ def homepage():
 
             # check for a match between the current row and the user_hobby dictionary
             for i in range(1, 31):
-                if f"question{i}" in hobby and f"question{i}" in user_hobby:
+                if f"question{i}" in hobby and user_hobby:
                     num_match += 1 if hobby[f"question{i}"] == user_hobby[f"question{i}"] else 0
+                    print(hobby[f"question{i}"])
+                    print(user_hobby[f"question{i}"])
+            print(num_match)
 
             # calculate the match percentage
-            match_percentage = (num_match/30) * 100
+            match_percentage = (num_match / 30) * 100
 
             # if the match percentage is at least 40, append the names value to the names_list
             if match_percentage >= 40:
                 names_list.append(hobby["username"])
                 
-            print(names_list)
+        print(names_list)
+        print(match_percentage)
 
         return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, names_list=names_list)
         

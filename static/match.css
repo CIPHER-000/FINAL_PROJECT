@@ -14,6 +14,10 @@ body {
     background-color: black;
 }
 
+:root {
+    --gradient: linear-gradient(to right, #e2336b, #fcac46);
+}
+
 .btn {
     display: flex;
     padding: 20px 50px;
@@ -21,7 +25,7 @@ body {
     position: relative;
     margin: 32px;
     transition: transform 0.3s ease;
-    background: #ff574a;
+    background: var(--gradient);
     text-decoration: none;
     color: #fff;
     font-family: 'Poppins', sans-serif;
