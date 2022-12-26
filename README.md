@@ -47,5 +47,14 @@ After a new user registers him/herself in the database, an instant redirect occu
             As developers we all know how problematic debugging can be and how we always try to avoid them, at least me in this context. Debugging the code was not an easy task, I had to rewrite some part of the project back from scratch which was very annoying. And I must say, debugging is a very good practise as it allows you to find errors you never knew were there and it also helps you to think on how to better optimize your code in terms of design or running-time, so always degbug.
       4. The match algorithm(of course, LOL):
             This was a minor set-back honestly as the algorithm needs user data in order to work and the algorithm was the last thing I worked on which means that every other part of the code was working fine already. So it was a little easy to implement.
+      
+    
+### Thanks and appreciation
+      First of all, I want to say a very big thank you to [David J. Malan](url) for this wonderful opportunity and to be part of this journey, it was really exciting, richly impactful and very challenging also, LOL. It has been an honour to learn from one of the best minds in the field of computer science. I also want to thank the instructors [doug loyd](url) and [brian yu](url) for their impactful and comprehensive run through and breakdown of the lectures and problem sets. Thank you once again.
+      And lastly, I want to thank my friend [rehoboth micah-daniels](url) for helping me with this project also.
+      
+      
+So that's all about my project's description, I hope it was fun reading through and I hope it has inspired you to go on and build your own project, whatever it might be. Thanks for reading through.
+
        
       
