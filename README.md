@@ -2,7 +2,7 @@
 #### Video Demo:  <URL HERE>
 #### Description:
 
-      Hello and this is my CS50 final project which I am going to cover in details, explaining the idea behind the project and how it will change the way you take the CS50 course online/in-person. If you are taking the Harvard CS50 course and you feel like you're alone, you don't have any friends to connect and take the course 
+      Hello and this is my **CS50 final project** which I am going to cover in details, explaining the idea behind the project and how it will change the way you take the CS50 course online/in-person. If you are taking the Harvard CS50 course and you feel like you're alone, you don't have any friends to connect and take the course 
 with, well CS50 MEET is here for you. 
   
   ### THE GOAL
