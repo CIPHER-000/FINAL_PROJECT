@@ -25,5 +25,15 @@ After a new user registers him/herself in the database, an instant redirect occu
       So this page contains 30 personality traits questions with levels to which are true about you, ("Totally Agree", "Somewhat Agree", "Neutral", "Somewhat Disagree" and "Totally Disagree"). So you'd pick answer each question according to the levels stated just now. After you answer every questions, click the "next" button below the page and you'll be redirected instantly to a new page/route called "interests". NOTE: the questions in the page are tested and proven questions gotten from trusted sources.
 
   ### interests
+      The information on this page is similar to the previous one(hobbies) as you'd be required to pick your interests, unlike the hobbies page you are only required to pick out of everything, but if you feel you are interested in everything too(which can be rare to find), you can certainly pick all, LOL.
+      
+  ### profile
+      This is the profile page where you get to add your picture(which will be public to all users in the app), nothing much. After clicking the "create profile button", you'll be redirected to the next page/route called "match".
+      
+   ### match
+      Now this page is considered to be straight-forward as it only contains one button that clearly says to "Find Match" which is going to redirect you to the profile page where you can see all students you've been matched with. If you want to know how you get perfectly matched with other character-like students, read below..
+      
+   #### How does the match algorithm work?
+      
        
       
