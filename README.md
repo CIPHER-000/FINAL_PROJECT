@@ -33,7 +33,19 @@ After a new user registers him/herself in the database, an instant redirect occu
    ### match
       Now this page is considered to be straight-forward as it only contains one button that clearly says to "Find Match" which is going to redirect you to the profile page where you can see all students you've been matched with. If you want to know how you get perfectly matched with other character-like students, read below..
       
-   #### How does the match algorithm work?
+   #### How does the match Algorithm work?
+      The Algorithm cannot work without data(meaning there has to be data read into the algorithm for it to work), that data consists of the answers to the personality traits questions and the your interests which you picked in the interest page. Because we connect better and faster with those of similar traits and interests with us this Algorithm matches you with those that have >=70% of the traits and interests you have answered and picked in the previous pages. This means that you are most likely to make friends that have almost everything in common with you, isn't that amazing.
       
+   ### CHALLENGES AND SETBACKS
+      These are the challenges and setbacks I had while working on this project.
+      1. Interface design:
+            This was an almost major setback for me as I did not know any frontend tools or how to use and work with them, so I had to use pure CSS which was stressful and fraustrating and at the same time impactful, as I got to learn some new CSS concepts that I didn't know existed, Lol. I leveraged on videos from Youtube, Stack overflow, Gooogle, etc.
+      2. Quering into the database:
+            I had a lot of issues with this one, moving the project's server-side from sqlite3 to MySQL was one of them and it was fraustrating because we didn't really dive that deep into other databases aside sqlite3, and how to connect and use them with your code, this I had to learn with the help of external souces like Youtube, Stack overflow, Google, etc.
+            Another one was getting, updating, inserting and posting user inputs into and from the database which was stressful and tiring as I tried many times, but getting a lot of errors, it was HELL trust me, LOL.
+      3. Debugging:
+            As developers we all know how problematic debugging can be and how we always try to avoid them, at least me in this context. Debugging the code was not an easy task, I had to rewrite some part of the project back from scratch which was very annoying. And I must say, debugging is a very good practise as it allows you to find errors you never knew were there and it also helps you to think on how to better optimize your code in terms of design or running-time, so always degbug.
+      4. The match algorithm(of course, LOL):
+            This was a minor set-back honestly as the algorithm needs user data in order to work and the algorithm was the last thing I worked on which means that every other part of the code was working fine already. So it was a little easy to implement.
        
       
