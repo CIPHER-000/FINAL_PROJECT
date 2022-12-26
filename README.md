@@ -50,7 +50,7 @@ After a new user registers him/herself in the database, an instant redirect occu
       
     
 ### Thanks and appreciation
-      First of all, I want to say a very big thank you to [David J. Malan](url) for this wonderful opportunity and to be part of this journey, it was really exciting, richly impactful and very challenging also, LOL. It has been an honour to learn from one of the best minds in the field of computer science. I also want to thank the instructors [doug loyd](url) and [brian yu](url) for their impactful and comprehensive run through and breakdown of the lectures and problem sets. Thank you once again.
+      First of all, I want to say a very big thank you to [David J. Malan](https://www.linkedin.com/in/malan/) for this wonderful opportunity and to be part of this journey, it was really exciting, richly impactful and very challenging also, LOL. It has been an honour to learn from one of the best minds in the field of computer science. I also want to thank the instructors [doug loyd](https://www.linkedin.com/in/douglaslloyd/) and [brian yu](https://www.linkedin.com/in/brian-yu/) for their impactful and comprehensive run through and breakdown of the lectures and problem sets. Thank you once again.
       And lastly, I want to thank my friend [rehoboth micah-daniels](url) for helping me with this project also.
       
       
