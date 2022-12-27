@@ -103,13 +103,23 @@
                 </div>
             </div>
             <!--Stories Content-->
-            <div class="stories">
+            <div>
                 <!--Stories 1-->
                 <h1>Matches</h1>
             
                 <ul class="names">
                     {% for name in names_list %}
-                        <li>{{ name }}</li>
+                        <li>
+                            <div class="names">
+                                <h1>
+                                    <div class="profiles">
+                                        <div class="profiles-img">
+                                            <img src="/static/uploads/{{user_profile_path}}"/>
+                                        </div> {{name}}
+                                    </div>
+                                </h1>
+                            </div>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

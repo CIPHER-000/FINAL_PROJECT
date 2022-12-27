@@ -155,9 +155,21 @@ def homepage():
                 print(names_list)
                 print(num_match)
                 
+                
+        # Convert the names_list to a string that can be used as an argument to the IN operator
+        #names_string = ", ".join(["'{}'".format(name) for name in names_list])
+        
+        # Use the SELECT statement to retrieve the image data from the database
+        #db.execute("SELECT images FROM profiles JOIN users ON users.id = profiles.user_id WHERE username IN ({names_string})")
+        for name in names_list:
+            db.execute("SELECT DISTINCT images FROM profiles JOIN users ON users.id = profiles.user_id WHERE username = %s", (name, ))
+            user_profile_path = db.fetchall()
+        print(user_profile_path)
+        user_profile_path = user_profile_path[0]["images"] if user_profile_path else "default.jpg"
+                
         
 
-        return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, names_list=names_list)
+        return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, names_list=names_list, user_profile_path=user_profile_path)
         
         
 
