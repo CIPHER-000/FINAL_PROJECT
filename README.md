@@ -34,7 +34,7 @@ After a new user registers him/herself in the database, an instant redirect occu
       Now this page is considered to be straightforward as it only contains one button that clearly says to "Find Match" which is going to redirect you to the profile page where you can see all students you've been matched with. If you want to know how you get perfectly matched with other character-like students, read below.
       
    #### How does the match Algorithm work?
-      The Algorithm cannot work without data(meaning there has to be data read into the algorithm for it to work), that data consists of the answers to the personality traits questions and your interests which you picked on the interest page. Because we connect better and faster with those of similar traits and interests with us this Algorithm matches you with those that have >=70% of the traits and interests you have answered and picked in the previous pages. This means that you are most likely to make friends that have almost everything in common with you, isn't that amazing?
+      The Algorithm cannot work without data(meaning there has to be data read into the algorithm for it to work), that data consists of the answers to the personality traits questions and your interests which you picked on the interest page. Because humans connect better and faster with those of similar traits and interests with us this Algorithm matches you with those that have >=70% of the traits and interests you have answered and picked in the previous pages. This means that you are most likely to make friends that have almost everything in common with you, isn't that amazing?
       
    ### CHALLENGES AND SETBACKS
       These are the challenges and setbacks I had while working on this project.
