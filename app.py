@@ -157,19 +157,16 @@ def homepage():
                 
                 
         # Convert the names_list to a string that can be used as an argument to the IN operator
-        #names_string = ", ".join(["'{}'".format(name) for name in names_list])
-        
-        # Use the SELECT statement to retrieve the image data from the database
-        #db.execute("SELECT images FROM profiles JOIN users ON users.id = profiles.user_id WHERE username IN ({names_string})")
-        for name in names_list:
-            db.execute("SELECT DISTINCT images FROM profiles JOIN users ON users.id = profiles.user_id WHERE username = %s", (name, ))
-            user_profile_path = db.fetchall()
-        print(user_profile_path)
-        user_profile_path = user_profile_path[0]["images"] if user_profile_path else "default.jpg"
-                
-        
+        names_string = ', '.join(['%s'] * len(names_list))
 
-        return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, names_list=names_list, user_profile_path=user_profile_path)
+        # Use the SELECT statement to retrieve the image data from the database
+        db.execute("SELECT images FROM profiles JOIN users ON users.id = profiles.user_id WHERE username IN ({names_string})".format(names_string=names_string), names_list)
+        user_profile_paths = db.fetchall()
+
+        # Zip the names_list and user_profile_paths together so that we can access both in the Jinja template
+        names_and_profiles = zip(names_list, user_profile_paths)
+                
+        return render_template("/homepage.html", username=username, about=about, profile_path=profile_path, logo_path=logo_path, names_list=names_list, names_and_profiles=names_and_profiles)
         
         
 

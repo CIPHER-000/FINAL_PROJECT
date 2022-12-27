@@ -108,13 +108,17 @@
                 <h1>Matches</h1>
             
                 <ul class="names">
-                    {% for name in names_list %}
+                    {% for name, user_profile in names_and_profiles %}
                         <li>
                             <div class="names">
                                 <h1>
                                     <div class="profiles">
                                         <div class="profiles-img">
-                                            <img src="/static/uploads/{{user_profile_path}}"/>
+                                            {% if user_profile.images is not defined %}
+                                                <img src="/static/uploads/default.jpg"/>
+                                            {% else %}
+                                                <img src="/static/uploads/{{user_profile.images}}"/>
+                                            {% endif %}
                                         </div> {{name}}
                                     </div>
                                 </h1>
@@ -122,6 +126,7 @@
                         </li>
                     {% endfor %}
                 </ul>
+
             </div>
     
 
