@@ -68,11 +68,14 @@ def hobbies():
     
     if request.method == "POST":
         options = [request.form.get(f"option{i}") for i in range(1, 31)]
+        # Check if any of the options are None
+        if any(option is None for option in options):
+            return apology("All questions must be answered")
         query = "INSERT INTO hobbies (user_id, question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, question11, question12, question13, question14, question15, question16, question17, question18, question19, question20, question21, question22, question23, question24, question25, question26, question27, question28, question29, question30) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         values = (session["user_id"], *options)
         db.execute(query, values)
         mydb.commit()
-        print(options[0], "record inserted.")
+        #print(options[0], "record inserted.")
         return redirect("/interests")
     else:
         return render_template("hobbies.html")
@@ -89,12 +92,15 @@ def interests():
         
         interests = request.form.getlist("interest")
         
+        if len(interests) < 1 or len(interests) < 10:
+            return apology("Please select at least 10 interests")
+        
         for interest in interests:
             db.execute("INSERT INTO interests (user_id, interest) VALUES (%s, %s)", (session["user_id"], interest, ))
         
         mydb.commit()
 
-        print(db.rowcount, "record inserted.")
+        #print(db.rowcount, "record inserted.")
         
         return redirect("/profile")
     else:
@@ -137,7 +143,7 @@ def homepage():
     # execute the SELECT statement and fetch the results
     db.execute("SELECT users.username, hobbies.* FROM hobbies JOIN users ON users.id = hobbies.user_id WHERE user_id != %s", (session["user_id"], ))
     hobbies = db.fetchall()
-    print(hobbies)
+    #print(hobbies)
     
     names_list = []
 
@@ -149,8 +155,8 @@ def homepage():
         for i in range(1, 31):
             if f"question{i}" in hobby and user_hobby:
                 num_match += 1 if hobby[f"question{i}"] == user_hobby[f"question{i}"] else 0
-                print(hobby[f"question{i}"],"...")
-                print(user_hobby[f"question{i}"])
+                #print(hobby[f"question{i}"],"...")
+                #print(user_hobby[f"question{i}"])
 
         user_num_match = 30
         # calculate the match percentage
@@ -159,8 +165,8 @@ def homepage():
         # if the match percentage is at least 70%, append the names value to the names_list
         if num_match >= match_percentage:
             names_list.append(hobby["username"])
-            print(names_list)
-            print(num_match)
+            #print(names_list)
+            #print(num_match)
             
             
     # Convert the names_list to a string that can be used as an argument to the IN operator
@@ -210,7 +216,7 @@ def profile():
         
         db.execute("SELECT images FROM profiles WHERE user_id= %s", (session["user_id"],))
         profile_path = db.fetchall()
-        print(profile_path)
+        #print(profile_path)
         profile_path = profile_path[0]["images"] if profile_path else "default.jpg"
         
         return render_template("profile.html", username=username, about=about, profile_path=profile_path)
@@ -229,7 +235,7 @@ def myprofile():
         if profile_picture:
             profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], profile_picture.filename))
             print('Image uploaded successfully!')
-            print(new_profile_path, session["user_id"])
+            #print(new_profile_path, session["user_id"])
             # Use the UPDATE statement to update the file in the database
             db.execute("UPDATE profiles SET images = %s WHERE user_id = %s", (profile_picture.filename, session["user_id"],))
             mydb.commit()
@@ -246,7 +252,7 @@ def myprofile():
         # Use the SELECT statement to retrieve the image data from the database
         db.execute("SELECT images FROM profiles WHERE user_id= %s", (session["user_id"],))
         profile_path = db.fetchall()
-        print(profile_path)
+        #print(profile_path)
         profile_path = profile_path[0]["images"] if profile_path else "default.jpg"
         
         return render_template("myprofile.html", username=username, about=about, profile_path=profile_path)
@@ -327,6 +333,7 @@ def register():
         
         # Validate email format
         email = request.form.get("email")
+        email = email.lower()
         if not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             return apology("Invalid email")
 
@@ -345,7 +352,7 @@ def register():
 
         # Remember which user has logged in
         session["user_id"] = db.lastrowid
-        print(db.lastrowid, "record inserted.")
+        #print(db.lastrowid, "record inserted.")
 
         return redirect("/hobbies")
     
