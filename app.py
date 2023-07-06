@@ -153,8 +153,10 @@ def homepage():
 
         # check for a match between the current row and the user_hobby dictionary
         for i in range(1, 31):
-            if f"question{i}" in hobby and user_hobby:
+            if f"question{i}" in hobby and f"question{i}" in user_hobby:
                 num_match += 1 if hobby[f"question{i}"] == user_hobby[f"question{i}"] else 0
+
+
                 #print(hobby[f"question{i}"],"...")
                 #print(user_hobby[f"question{i}"])
 
